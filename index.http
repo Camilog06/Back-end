@@ -1,30 +1,26 @@
-### Recuperar todos los usuarios
 GET http://localhost:1234/users
-
-### Recuperar un usuario por id
-GET http://localhost:1234/users/xx1
 
 ### Create user
 POST http://localhost:1234/users
 Content-Type: application/json
 
 {                                             
-    "nombre": "Ejemplo",
+    "nombre": "Camilo",
     "dob": "2000-01-01",
-    "address": "Ejemplo St.",
+    "adress": "Ejemplo St.",
     "description": "Alguna descripción",
     "createdAt": "2023-01-01"
 }
 
 ### Update user
 
-PATCH http://localhost:1234/users/ef1b1567-87d3-41bb-add5-63c4eb9d4e49
+PATCH http://localhost:1234/users/Ejemplo
 Content-Type: application/json
 
 {
-    "dob": "2001-09-09"
+    "description": "hola"
 }
 
 ### Delete user
 
-DELETE http://localhost:1234/users/ef1b1567-87d3-41bb-add5-63c4eb9d4e49
+DELETE http://localhost:1234/users/María
