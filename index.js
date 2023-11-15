@@ -3,7 +3,7 @@ import { corsMiddleware } from './middlewares/cors.js';
 import { usersRouter } from './routes/users.js';
 import { UserModel } from './models/mysql/movie.js';
 import 'dotenv/config';
-import mysql from 'mysql2/promise';  // Importa la librería mysql2/promise
+import mysql from 'mysql2/promise';  
 
 const app = express();
 app.use(express.json());
@@ -23,7 +23,6 @@ try {
     const pool = await mysql.createPool(connectionString);
     console.log('Conexión a la base de datos establecida correctamente.');
 
-    // Middleware para agregar el pool a la solicitud
     app.use((req, res, next) => {
         req.mysql = pool;
         next();
@@ -51,4 +50,3 @@ const PORT = process.env.PORT || 1234;
 app.listen(PORT, () => {
     console.log(`server listening on port http://localhost:${PORT}`);
 });
-

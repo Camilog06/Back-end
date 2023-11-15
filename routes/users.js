@@ -6,13 +6,11 @@ export const usersRouter = Router()
 
 usersRouter.get('/', UserController.getAll)
 
-usersRouter.get('/:id', UserController.getById)
-
 usersRouter.post('/', UserController.create)
 
-usersRouter.delete('/:id', UserController.delete)
+usersRouter.delete('/:name', UserController.delete)
 
-usersRouter.patch('/:id', UserController.update)
+usersRouter.patch('/:name', UserController.update)
 
 usersRouter.options('/:id', (req, res) => {
     const origin = req.header('origin')
